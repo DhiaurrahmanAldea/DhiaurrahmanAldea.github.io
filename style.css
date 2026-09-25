@@ -363,12 +363,49 @@ ul {
 .project-image {
     height: 200px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--surface-light) 0%, var(--surface-color) 100%);
+    overflow: hidden;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.project-image i {
+    position: relative;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    opacity: 0.55;
+    filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.35));
 }
 
 .project-overlay {
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+/* CTA shown when a project has no public link yet — clearly not clickable */
+.project-cta-pending {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border: 1px dashed var(--border-color);
+    border-radius: 30px;
+    width: fit-content;
 }
 
 .project-category {
