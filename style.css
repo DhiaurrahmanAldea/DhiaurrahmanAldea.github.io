@@ -158,23 +158,31 @@ ul {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
     content: '';
     position: absolute;
     top: -20%;
-    right: -10%;
+    right: -5%;
     width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(5,8,16,0) 70%);
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
